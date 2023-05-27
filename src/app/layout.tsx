@@ -14,8 +14,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html className={inter.className} lang="en">
+      <body className="flex w-screen overflow-hidden">
+        <div className="w-270 bg-slate-700 ">
+          <div>side</div>
+        </div>
+        <div>
+          <header className="w-full bg-yellow-300 flex justify-between">
+            <h1>header</h1>
+            <h2>sdfdsf</h2>
+          </header>
+          <main className="bg-slate-300">{children}</main>
+        </div>
+      </body>
     </html>
   );
 }
