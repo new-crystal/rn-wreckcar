@@ -1,18 +1,54 @@
 {
-  "posts": [
+  "getData": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "_id": "1",
+      "url": "https://utm.works",
+      "campaignId": "-",
+      "campaignName": "campaign_text",
+      "content": "content",
+      "term": "term_text",
+      "memo": "memo_text",
+      "fullUrl": "https://utm.works?utm_source=source_text&utm_medium=medium_text&utm_campaign=campaign_text&utm_term=term_text",
+      "shortenUrl": "https://utm.works",
+      "clickCount": 0,
+      "createdAt": "2023-04-18"
+    },
+    {
+      "_id": "2",
+      "url": "https://utm.works",
+      "campaignId": "-",
+      "campaignName": "campaign_text",
+      "content": "content",
+      "term": "term_text",
+      "memo": "memo_text",
+      "fullUrl": "https://utm.works?utm_source=source_text&utm_medium=medium_text&utm_campaign=campaign_text&utm_term=term_text",
+      "shortenUrl": "https://utm.works",
+      "clickCount": 0,
+      "createdAt": "2023-04-18"
     }
   ],
-  "comments": [
+  "postData": [
     {
       "id": 1,
-      "body": "some comment"
+      "source": "naver",
+      "medium": "medium_text",
+      "campaign_name": "campaign_text",
+      "url": "https://utm.works",
+      "campaign_id": "campaign_id",
+      "term": "term_text",
+      "content": "content",
+      "memo": "memo_text"
+    },
+    {
+      "id": 2,
+      "url": "https://utm.works",
+      "source": "source_text",
+      "medium": "medium_text",
+      "campaign_name": "campaign_text",
+      "campaign_id": "campaign_id",
+      "term": "term_text",
+      "content": "content",
+      "memo": "memo_text"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
