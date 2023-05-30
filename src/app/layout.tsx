@@ -1,3 +1,4 @@
+import Aside from '@/components/common/aside/Aside';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
@@ -15,10 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html className={inter.className} lang="en">
-      <body className="flex w-screen overflow-hidden">
-        <div className="w-270 bg-slate-700 ">
-          <div>side</div>
-        </div>
+      <body className="flex w-screen overflow-x-hidden-hidden">
+        <Aside />
         <div>
           <header className="w-full bg-yellow-300 flex justify-between">
             <h1>header</h1>
