@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
+interface PropsType {
+  url: string;
+  isBlank: boolean;
+  children: React.ReactNode;
+}
 
-type propsType = {
-  text: string;
-  linkUrl: string;
-};
-
-const ATag: React.FC<propsType> = ({ text, linkUrl }) => {
+const ATag: React.FC<PropsType> = ({ children, url, isBlank }) => {
   return (
-    <Link href={`${linkUrl}`} target="_blank">
-      {text}
+    <Link href={`${url}`} target={isBlank ? '_blank' : ''}>
+      {children}
     </Link>
   );
 };
