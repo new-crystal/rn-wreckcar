@@ -3,6 +3,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 
 import { usePathname } from 'next/navigation';
+import Header from '@/components/common/header/Header';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -19,12 +20,9 @@ export default function RootLayout({
     <html className={inter.className} lang="en">
       <body className="flex w-screen overflow-x-hidden-hidden">
         <ASide />
-        <div>
-          <header className="w-full bg-yellow-300 flex justify-between">
-            <h1>header</h1>
-            <h2>sdfdsf</h2>
-          </header>
-          <main className="bg-slate-300">{children}</main>
+        <div className="w-full">
+          <Header />
+          <main className=" ">{children}</main>
         </div>
       </body>
     </html>

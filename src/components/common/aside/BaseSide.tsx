@@ -12,7 +12,7 @@ import {
   Imanage,
 } from '../icon/Icon';
 import { usePathname } from 'next/navigation';
-import { SlimProps } from './AsideType';
+// import { SlimProps } from './AsideType';
 export default function Base({ slimHandle }: SlimProps) {
   const pathName = usePathname();
 
@@ -71,7 +71,7 @@ export default function Base({ slimHandle }: SlimProps) {
             <p className=" font-extrabold text-xl ml-2">유렉카</p>
             <ATag url={'https://utm.works'} isBlank={true}>
               <li className="flex flex-row gap-2  rounded-[4px] hover:bg-hblue p-2">
-                <INoti fillColor={'white'} />
+                <INoti bnw={'w'} w={24} h={24} />
                 공지사항
               </li>
             </ATag>

@@ -10,8 +10,6 @@ import {
   INoti,
   Imanage,
 } from '../icon/Icon';
-import Image from 'next/image';
-import { SlimProps } from './AsideType';
 export default function Slim({ slimHandle }: SlimProps) {
   const pathName = usePathname();
   return (
@@ -62,7 +60,7 @@ export default function Slim({ slimHandle }: SlimProps) {
           <div className="flex flex-col gap-3 bottom_nav  mb-20 items-center ">
             <ATag url={'https://utm.works'} isBlank={true}>
               <li className=" flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ">
-                <INoti fillColor={'white'} />
+                <INoti bnw={'w'} w={24} h={24} />
               </li>
             </ATag>
             <ATag url={'https://naver.com'} isBlank={true}>

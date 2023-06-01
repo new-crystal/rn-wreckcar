@@ -1,3 +1,3 @@
-export type SlimProps = {
+type SlimProps = {
   slimHandle: () => void;
 };

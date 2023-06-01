@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import Base from './Base';
-import Slim from './Slim';
+import Base from './BaseSide';
+import Slim from './SlimSide';
 
 export default function Aside() {
   const [folding, setFolding] = useState(true);

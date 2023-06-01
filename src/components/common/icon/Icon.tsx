@@ -1,5 +1,19 @@
 import React from 'react';
-import { AiOutlineSound } from '@react-icons/all-files/ai/AiOutlineSound';
+import black_noti from '../../../../public/assets/png_icon/black_noti.png';
+import white_noti from '../../../../public/assets/png_icon/white_noti.png';
+import Image from 'next/image';
+export const INoti = ({ bnw, w, h }: NotiType) => {
+  return (
+    <>
+      {bnw === 'w' && (
+        <Image src={white_noti} alt={''} width={`${w}`} height={`${h}`} />
+      )}
+      {bnw === 'b' && (
+        <Image src={black_noti} alt={''} width={`${w}`} height={`${h}`} />
+      )}
+    </>
+  );
+};
 export const ILogo = () => {
   return (
     <>
@@ -244,7 +258,7 @@ export const ICreate = ({ fillColor }: PropsType) => {
         width="24"
         height="24"
         viewBox="0 0 24 24"
-        fill={`${fillColor}`}
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -429,6 +443,7 @@ export const ILogout = ({ fillColor }: PropsType) => {
 export const Imanage = ({ fillColor }: PropsType) => {
   return (
     <>
+      {' '}
       <svg
         width="24"
         height="24"
@@ -542,13 +557,6 @@ export const IMore = ({ fillColor }: PropsType) => {
   );
 };
 
-export const INoti = ({ fillColor }: PropsType) => {
-  return (
-    <>
-      <AiOutlineSound width={24} height={24} />
-    </>
-  );
-};
 export const ISearch = ({ fillColor }: PropsType) => {
   return (
     <>
@@ -624,6 +632,34 @@ export const IUser = ({ fillColor }: PropsType) => {
         <path
           d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
           stroke={`${fillColor}`}
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </>
+  );
+};
+export const IProfile = () => {
+  return (
+    <>
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="16" cy="16" r="16" fill="#0A0D54" />
+        <path
+          d="M23.5 22.4993V19.666C23.5 18.0092 22.1569 16.666 20.5 16.666H11.5C9.84315 16.666 8.5 18.0092 8.5 19.666V22.4993"
+          stroke="white"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+        <path
+          d="M16 14.1667C17.841 14.1667 19.3334 12.6743 19.3334 10.8333C19.3334 8.99238 17.841 7.5 16 7.5C14.1591 7.5 12.6667 8.99238 12.6667 10.8333C12.6667 12.6743 14.1591 14.1667 16 14.1667Z"
+          stroke="white"
           stroke-width="1.5"
           stroke-linecap="round"
           stroke-linejoin="round"
