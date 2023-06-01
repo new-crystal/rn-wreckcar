@@ -15,6 +15,7 @@ module.exports = {
     },
     backgroundColor: {
       blue: '#484BFF',
+      hblue: '#382ADE',
       pink: '#ff49db',
       orange: '#ff7849',
       green: '#13ce66',

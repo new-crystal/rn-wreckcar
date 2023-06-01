@@ -11,7 +11,8 @@ import {
   Imanage,
 } from '../icon/Icon';
 import Image from 'next/image';
-export default function Slim() {
+import { SlimProps } from './AsideType';
+export default function Slim({ slimHandle }: SlimProps) {
   const pathName = usePathname();
   return (
     <aside
@@ -21,31 +22,58 @@ export default function Slim() {
       }
     >
       <div className="bg-blue w-[60px] min-w-[60px] fixed pt-3 ">
-        <div className="logo_slide flex justify-center">
+        <div
+          className="logo_slide flex justify-center cursor-pointer"
+          onClick={slimHandle}
+        >
           <IMenu fillColor={'white'} />
         </div>
 
-        <div className="w_nav h-screen flex flex-col justify-between">
-          <div className="top_nav flex-col flex bg-green mt-14 gap-4 items-center">
+        <div className="w_nav h-screen flex flex-col justify-between pb-4">
+          <ul className="top_nav flex-col flex mt-20 gap-4 items-center">
             <ATag url={'/management'} isBlank={false}>
-              <Imanage fillColor={'white'} />
+              <li
+                className={
+                  'flex flex-row gap-2 p-2 hover:bg-hblue ' +
+                  (pathName == '/management'
+                    ? 'bg-hblue p-2 rounded-[4px]'
+                    : '')
+                }
+              >
+                <Imanage fillColor={'white'} />
+              </li>
             </ATag>
             <ATag url={'/creating'} isBlank={false}>
-              <ICreate fillColor={'white'} />
+              <li
+                className={
+                  'flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ' +
+                  (pathName == '/creating' ? 'bg-hblue p-2 rounded-[4px]' : '')
+                }
+              >
+                <ICreate fillColor={'white'} />
+              </li>
             </ATag>
             <ATag url={'https://naver.com'} isBlank={false}>
-              <IAdd fillColor={'white'} />
+              <li className=" flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ">
+                <IAdd fillColor={'white'} />
+              </li>
             </ATag>
-          </div>
-          <div className="flex flex-col gap-3 bottom_nav bg-orange mb-20 items-center ">
+          </ul>
+          <div className="flex flex-col gap-3 bottom_nav  mb-20 items-center ">
             <ATag url={'https://utm.works'} isBlank={true}>
-              <INoti fillColor={'white'} />
+              <li className=" flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ">
+                <INoti fillColor={'white'} />
+              </li>
             </ATag>
             <ATag url={'https://naver.com'} isBlank={true}>
-              <IGuide fillColor={'white'} />
+              <li className=" flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ">
+                <IGuide fillColor={'white'} />
+              </li>
             </ATag>
             <ATag url={'https://naver.com'} isBlank={true}>
-              <IMore fillColor={'white'} />
+              <li className=" flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ">
+                <IMore fillColor={'white'} />
+              </li>
             </ATag>
           </div>
         </div>

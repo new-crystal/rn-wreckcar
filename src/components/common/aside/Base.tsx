@@ -1,10 +1,19 @@
 'use client';
 import React, { useState } from 'react';
 import ATag from '../link/ATag';
-import { ISlim } from '../icon/Icon';
+import {
+  IAdd,
+  ICreate,
+  IGuide,
+  ILogo,
+  IMore,
+  INoti,
+  ISlim,
+  Imanage,
+} from '../icon/Icon';
 import { usePathname } from 'next/navigation';
-
-export default function Base() {
+import { SlimProps } from './AsideType';
+export default function Base({ slimHandle }: SlimProps) {
   const pathName = usePathname();
 
   return (
@@ -14,37 +23,73 @@ export default function Base() {
         (pathName == '/' || pathName == '/login' ? ' hidden' : '')
       }
     >
-      <div className="bg-blue w-[270px] min-w-[270px] fixed">
-        <div className="logo_slide flex justify-between">
-          <div className="logo">logo</div>
-          <ISlim fillColor={'white'} />
+      <div className="bg-blue w-[270px] min-w-[270px] fixed pt-3 pb-5 ">
+        <div className="logo_slide flex justify-between px-3 mt-1">
+          <div className="logo ml-3 h-[70px]">
+            <ILogo />
+          </div>
+          <div onClick={slimHandle} className="mr-2 cursor-pointer">
+            <ISlim fillColor={'white'} />
+          </div>
         </div>
 
-        <div className="w_nav h-screen flex flex-col justify-between">
-          <div className="top_nav flex-col flex bg-green mt-14 gap-3">
-            <p className="mb-1 ">내 UTM</p>
+        <div className="w_nav h-screen flex flex-col justify-between px-3 pb-4">
+          <ul className="top_nav flex-col flex mt-10 gap-2 ">
+            <p className="mb-5 ml-2 font-extrabold text-xl">MY UTM</p>
             <ATag url={'/management'} isBlank={false}>
-              UTM 관리하기
+              <li
+                className={
+                  'flex flex-row gap-2  p-2 hover:bg-hblue rounded-[4px]' +
+                  (pathName == '/management'
+                    ? 'bg-orange p-2 rounded-[4px]'
+                    : '')
+                }
+              >
+                <Imanage fillColor={'white'} />
+                UTM 관리하기
+              </li>
             </ATag>
             <ATag url={'/creating'} isBlank={false}>
-              새 UTM 생성하기
+              <li
+                className={
+                  'flex flex-row gap-2 p-2 hover:bg-hblue ' +
+                  (pathName == '/creating' ? 'bg-hblue p-2 rounded-[4px]' : '')
+                }
+              >
+                <ICreate fillColor={'white'} />새 UTM 생성하기
+              </li>
             </ATag>
+
             <ATag url={'https://naver.com'} isBlank={false}>
-              기존 UTM 추가하기
+              <li className="flex flex-row gap-2 p-2 rounded-[4px] hover:bg-hblue ">
+                <IAdd fillColor={'white'} />
+                기존 UTM 추가하기
+              </li>
             </ATag>
-          </div>
-          <div className="flex flex-col gap-3 bottom_nav bg-orange mb-20 ">
-            <p>유렉카</p>
+          </ul>
+          <ul className="flex flex-col gap-3 mb-20 pb-12  ">
+            <p className=" font-extrabold text-xl ml-2">유렉카</p>
             <ATag url={'https://utm.works'} isBlank={true}>
-              공지사항
+              <li className="flex flex-row gap-2  rounded-[4px] hover:bg-hblue p-2">
+                <INoti fillColor={'white'} />
+                공지사항
+              </li>
             </ATag>
+
             <ATag url={'https://naver.com'} isBlank={true}>
-              가이드
+              <li className="flex flex-row gap-2 rounded-[4px] hover:bg-hblue p-2">
+                <IGuide fillColor={'white'} />
+                가이드
+              </li>
             </ATag>
+
             <ATag url={'https://naver.com'} isBlank={true}>
-              문의하기
+              <li className="flex flex-row gap-2  rounded-[4px] hover:bg-hblue p-2">
+                <IMore fillColor={'white'} />
+                문의하기
+              </li>
             </ATag>
-          </div>
+          </ul>
         </div>
       </div>
     </aside>
