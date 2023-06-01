@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 import ATag from '../link/ATag';
+import { ISlim } from '../icon/Icon';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
-import test from '@/public/assets/test.svg';
+
 export default function Base() {
   const pathName = usePathname();
 
@@ -17,7 +17,7 @@ export default function Base() {
       <div className="bg-blue w-[270px] min-w-[270px] fixed">
         <div className="logo_slide flex justify-between">
           <div className="logo">logo</div>
-          <Image src={test} alt={''} />
+          <ISlim fillColor={'white'} />
         </div>
 
         <div className="w_nav h-screen flex flex-col justify-between">
@@ -35,9 +35,15 @@ export default function Base() {
           </div>
           <div className="flex flex-col gap-3 bottom_nav bg-orange mb-20 ">
             <p>유렉카</p>
-            <ATag url={'https://utm.works'} isBlank={true} />
-            <ATag url={'https://naver.com'} isBlank={true} />
-            <ATag url={'https://naver.com'} isBlank={true} />
+            <ATag url={'https://utm.works'} isBlank={true}>
+              공지사항
+            </ATag>
+            <ATag url={'https://naver.com'} isBlank={true}>
+              가이드
+            </ATag>
+            <ATag url={'https://naver.com'} isBlank={true}>
+              문의하기
+            </ATag>
           </div>
         </div>
       </div>
