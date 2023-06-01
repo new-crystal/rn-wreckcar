@@ -1,7 +1,8 @@
-import Aside from '@/components/common/aside/Aside';
+import ASide from '@/components/common/aside/ASide';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
+import { usePathname } from 'next/navigation';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html className={inter.className} lang="en">
       <body className="flex w-screen overflow-x-hidden-hidden">
-        <Aside />
+        <ASide />
         <div>
           <header className="w-full bg-yellow-300 flex justify-between">
             <h1>header</h1>
