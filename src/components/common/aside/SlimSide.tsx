@@ -15,8 +15,10 @@ export default function Slim({ slimHandle }: SlimProps) {
   return (
     <aside
       className={
-        'w-[80px] min-w-[60px] text-white h-screen' +
-        (pathName == '/' || pathName == '/login' ? ' hidden' : '')
+        'w-[80px] min-w-[60px] text-white h-screen ' +
+        (pathName == '/' || pathName == '/signin' || pathName === '/signup'
+          ? 'hidden'
+          : '')
       }
     >
       <div className="bg-blue w-[60px] min-w-[60px] fixed pt-3 ">
@@ -29,7 +31,7 @@ export default function Slim({ slimHandle }: SlimProps) {
 
         <div className="w_nav h-screen flex flex-col justify-between pb-4">
           <ul className="top_nav flex-col flex mt-20 gap-4 items-center">
-            <ATag url={'/management'} isBlank={false}>
+            <ATag href={'/management'} isBlank={false}>
               <li
                 className={
                   'flex flex-row gap-2 p-2 hover:bg-hblue ' +
@@ -41,7 +43,7 @@ export default function Slim({ slimHandle }: SlimProps) {
                 <Imanage fillColor={'white'} />
               </li>
             </ATag>
-            <ATag url={'/creating'} isBlank={false}>
+            <ATag href={'/creating'} isBlank={false}>
               <li
                 className={
                   'flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ' +
@@ -51,24 +53,24 @@ export default function Slim({ slimHandle }: SlimProps) {
                 <ICreate fillColor={'white'} />
               </li>
             </ATag>
-            <ATag url={'https://naver.com'} isBlank={false}>
+            <ATag href={'https://naver.com'} isBlank={false}>
               <li className=" flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ">
                 <IAdd fillColor={'white'} />
               </li>
             </ATag>
           </ul>
           <div className="flex flex-col gap-3 bottom_nav  mb-20 items-center ">
-            <ATag url={'https://utm.works'} isBlank={true}>
+            <ATag href={'https://utm.works'} isBlank={true}>
               <li className=" flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ">
                 <INoti bnw={'w'} w={24} h={24} />
               </li>
             </ATag>
-            <ATag url={'https://naver.com'} isBlank={true}>
+            <ATag href={'https://naver.com'} isBlank={true}>
               <li className=" flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ">
                 <IGuide fillColor={'white'} />
               </li>
             </ATag>
-            <ATag url={'https://naver.com'} isBlank={true}>
+            <ATag href={'https://naver.com'} isBlank={true}>
               <li className=" flex flex-row gap-2 p-2 hover:bg-hblue rounded-[4px] ">
                 <IMore fillColor={'white'} />
               </li>
