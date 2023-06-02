@@ -20,14 +20,18 @@ export default function Base({ slimHandle }: SlimProps) {
     <aside
       className={
         'w-[270px] min-w-[270px] text-white h-screen' +
-        (pathName == '/' || pathName == '/login' ? ' hidden' : '')
+        (pathName == '/' || pathName == '/signin' || pathName === '/signup'
+          ? ' hidden'
+          : '')
       }
     >
       <div className="bg-blue w-[270px] min-w-[270px] fixed pt-3 pb-5 ">
         <div className="logo_slide flex justify-between px-3 mt-1">
-          <div className="logo ml-3 h-[70px]">
-            <ILogo />
-          </div>
+          <ATag href={'/'} isBlank={false}>
+            <div className="logo ml-3 h-[70px]">
+              <ILogo />
+            </div>
+          </ATag>
           <div onClick={slimHandle} className="mr-2 cursor-pointer">
             <ISlim fillColor={'white'} />
           </div>
@@ -36,7 +40,7 @@ export default function Base({ slimHandle }: SlimProps) {
         <div className="w_nav h-screen flex flex-col justify-between px-3 pb-4">
           <ul className="top_nav flex-col flex mt-10 gap-2 ">
             <p className="mb-5 ml-2 font-extrabold text-xl">MY UTM</p>
-            <ATag url={'/management'} isBlank={false}>
+            <ATag href={'/management'} isBlank={false}>
               <li
                 className={
                   'flex flex-row gap-2  p-2 hover:bg-hblue rounded-[4px]' +
@@ -49,7 +53,7 @@ export default function Base({ slimHandle }: SlimProps) {
                 UTM 관리하기
               </li>
             </ATag>
-            <ATag url={'/creating'} isBlank={false}>
+            <ATag href={'/creating'} isBlank={false}>
               <li
                 className={
                   'flex flex-row gap-2 p-2 hover:bg-hblue ' +
@@ -60,7 +64,7 @@ export default function Base({ slimHandle }: SlimProps) {
               </li>
             </ATag>
 
-            <ATag url={'https://naver.com'} isBlank={false}>
+            <ATag href={'https://naver.com'} isBlank={false}>
               <li className="flex flex-row gap-2 p-2 rounded-[4px] hover:bg-hblue ">
                 <IAdd fillColor={'white'} />
                 기존 UTM 추가하기
@@ -69,21 +73,21 @@ export default function Base({ slimHandle }: SlimProps) {
           </ul>
           <ul className="flex flex-col gap-3 mb-20 pb-12  ">
             <p className=" font-extrabold text-xl ml-2">유렉카</p>
-            <ATag url={'https://utm.works'} isBlank={true}>
+            <ATag href={'https://utm.works'} isBlank={true}>
               <li className="flex flex-row gap-2  rounded-[4px] hover:bg-hblue p-2">
                 <INoti bnw={'w'} w={24} h={24} />
                 공지사항
               </li>
             </ATag>
 
-            <ATag url={'https://naver.com'} isBlank={true}>
+            <ATag href={'https://naver.com'} isBlank={true}>
               <li className="flex flex-row gap-2 rounded-[4px] hover:bg-hblue p-2">
                 <IGuide fillColor={'white'} />
                 가이드
               </li>
             </ATag>
 
-            <ATag url={'https://naver.com'} isBlank={true}>
+            <ATag href={'https://naver.com'} isBlank={true}>
               <li className="flex flex-row gap-2  rounded-[4px] hover:bg-hblue p-2">
                 <IMore fillColor={'white'} />
                 문의하기

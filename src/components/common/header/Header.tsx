@@ -7,7 +7,10 @@ export default function Header() {
   const pathname = usePathname();
   return (
     <>
-      {pathname === '/' && '/login' && '/singup' && <ColorHead />}
+      {(pathname === '/' ||
+        pathname === '/login' ||
+        pathname === '/signup' ||
+        pathname === '/signin') && <ColorHead />}
       {(pathname === '/management' || pathname === '/creating') && <BaseHead />}
     </>
   );

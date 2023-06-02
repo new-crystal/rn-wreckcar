@@ -1,8 +1,6 @@
 import ASide from '@/components/common/aside/ASide';
 import './globals.css';
 import { Inter } from 'next/font/google';
-
-import { usePathname } from 'next/navigation';
 import Header from '@/components/common/header/Header';
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,11 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html className={inter.className} lang="en">
-      <body className="flex w-screen overflow-x-hidden-hidden">
+      <body className="flex w-screen h-screen overflow-x-hidden ">
         <ASide />
-        <div className="w-full">
+        <div className="">
           <Header />
-          <main className=" ">{children}</main>
+          <main className="">{children}</main>
         </div>
       </body>
     </html>
