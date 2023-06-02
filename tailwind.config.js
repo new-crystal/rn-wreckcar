@@ -18,8 +18,7 @@ module.exports = {
       hblue: '#382ADE',
       deepBlue: '#0A0D54',
       white: '#fff',
-    },
-  },
+    },  },
 
   plugins: [],
 };

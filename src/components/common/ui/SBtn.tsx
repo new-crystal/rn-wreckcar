@@ -1,16 +1,18 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
 
-type SizeType = 'sm' | 'md' | 'lg';
-type ColorType = 'white' | 'blue';
+type SizeType = "sm" | "md" | "lg";
+type ColorType = "white" | "blue";
 
 interface BtnPropsType {
-  propsHandle: () => void;
+  onClick: () => void;
   size: SizeType;
+  color: ColorType;
+  children: string;
 }
 export const SBtn: React.FC<BtnPropsType> = (props) => {
-  const { propsHandle, size } = props;
-  const [cusSize, setCusSize] = useState<SizeType>('md');
+  const { onClick, size, children, color } = props;
+  const [cusSize, setCusSize] = useState<SizeType>("md");
 
   useEffect(() => {
     setCusSize(size);
@@ -19,13 +21,14 @@ export const SBtn: React.FC<BtnPropsType> = (props) => {
     <>
       <button
         className={
-          'bg-blue ' +
-          ((cusSize === 'sm' && 'w-[120px] rounded-md') ||
-            (cusSize === 'lg' && ' bg-orange'))
+          "bg-blue rounded-[4px] h-[38px] " +
+          ((cusSize === "sm" && " w-[50px] ") ||
+            (cusSize === "md" && "w-[81px]") ||
+            (cusSize === "lg" && " w-[500px] ")) + (color === 'white' ? "" : " text-white hover:bg-hblue active:bg-blue duration-150")
         }
-        onClick={propsHandle}
+        onClick={onClick}
       >
-        button
+        {children}
       </button>
     </>
   );

@@ -27,7 +27,7 @@ export default function Option() {
         checked={getIsChecked === 'true' ? true : false}
       />
       <div className="flex">
-        <ATag href={'/singup'} isBlank={false}>
+        <ATag href={'/signup'} isBlank={false}>
           <span>회원가입</span>
         </ATag>
         <span className="mx-2"> | </span> <span> 비밀번호를 잊으셨나요?</span>
