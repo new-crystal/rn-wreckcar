@@ -1,7 +1,8 @@
+'use client'
 import * as React from 'react';
 
 interface PropsType {
-  items: string[];
+  items?: string[];
 }
 
 const WTable: React.FC<PropsType> = ({ items }) => {
@@ -9,7 +10,7 @@ const WTable: React.FC<PropsType> = ({ items }) => {
     <>
       <table>
         <tbody>
-          {items.map((food: any) => (
+          {items?.map((food: any) => (
             <tr key={food.id}>
               <td>{food.name}</td>
               <td>{food.description}</td>

@@ -6,6 +6,7 @@ import {
   ICreate,
   IGuide,
   ILogo,
+  IMenu,
   IMore,
   INoti,
   ISlim,
@@ -39,7 +40,7 @@ export default function Base({ slimHandle }: SlimProps) {
 
         <div className="w_nav h-screen flex flex-col justify-between px-3 pb-4">
           <ul className="top_nav flex-col flex mt-10 gap-2 ">
-            <p className="mb-5 ml-2 font-extrabold text-xl">MY UTM</p>
+            <p className="mb-4 ml-3 font-bold text-xl">내 UTM</p>
             <ATag href={'/management'} isBlank={false}>
               <li
                 className={
@@ -70,9 +71,22 @@ export default function Base({ slimHandle }: SlimProps) {
                 기존 UTM 추가하기
               </li>
             </ATag>
+            <p className='mb-4 ml-3 font-bold text-xl mt-10'> 워크 스페이스</p>
+            <ATag href={'/workspace/main'} isBlank={false}>
+             
+              <li className="flex flex-row gap-2 p-2 rounded-[4px] hover:bg-hblue ">
+                <IMenu fillColor={'white' } />
+                워크 스페이스 관리하기
+                </li>
+            </ATag>
+            
+            <li className="flex flex-row gap-2 p-2 rounded-[4px] hover:bg-hblue ">
+              <ICreate fillColor={'white'} />
+              새 워크 스페이스 생성하기 
+              </li>
           </ul>
           <ul className="flex flex-col gap-3 mb-20 pb-12  ">
-            <p className=" font-extrabold text-xl ml-2">유렉카</p>
+            <p className=" font-extrabold text-xl ml-3">유렉카</p>
             <ATag href={'https://utm.works'} isBlank={true}>
               <li className="flex flex-row gap-2  rounded-[4px] hover:bg-hblue p-2">
                 <INoti bnw={'w'} w={24} h={24} />
