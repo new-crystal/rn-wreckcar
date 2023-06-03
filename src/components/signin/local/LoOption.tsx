@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function Option() {
   const [remember, setRemember] = useState<boolean>();
+  const [isCheck, setCheck] = useState<string>(); 
 
   /**
    * @param event checked boolean
@@ -17,14 +18,22 @@ export default function Option() {
   /**
    * 로컬에서 boolean값 가져오기
    */
-  const getIsChecked = localStorage.getItem('uwreckcarLocalIdCheck');
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const getIsChecked = localStorage.getItem('uwreckcarLocalIdCheck');
+      if (getIsChecked) {
+        setCheck(getIsChecked)
+      }
+    }
+  }, []);
+
 
   return (
     <div className="flex justify-between">
       <input
         type="checkbox"
         onChange={checkboxHandle}
-        checked={getIsChecked === 'true' ? true : false}
+        checked={isCheck === 'true' ? true : false}
       />
       <div className="flex">
         <ATag href={'/signup'} isBlank={false}>

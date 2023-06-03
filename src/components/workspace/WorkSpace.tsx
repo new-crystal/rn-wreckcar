@@ -4,6 +4,7 @@ import axios from 'axios';
 import WSearch from './WSearch';
 import WTable from './WTable';
 import WChart from './WChart';
+import Winfo from './Winfo';
 export default function WorkSpace() {
   const [items, setItems] =useState()
   const listData = async () => {
@@ -21,6 +22,7 @@ export default function WorkSpace() {
     <>
       <h1>WorkSpace</h1>
       <WSearch />
+      <Winfo />
       <WChart />
       <WTable />
     </>

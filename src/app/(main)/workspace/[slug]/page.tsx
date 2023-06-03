@@ -1,6 +1,7 @@
 'use client'
 import WChart from '@/components/workspace/WChart';
 import WSearch from '@/components/workspace/WSearch';
+import WorkSpace from '@/components/workspace/WorkSpace';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
@@ -11,8 +12,7 @@ export default function WorkSpaceMain({ params }: { params: { slug: string } }) 
     console.log()
     return (
         <div className=''>
-            <WSearch />
-            <WChart />
+            <WorkSpace />
         </div>
     );
 }

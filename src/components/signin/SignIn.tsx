@@ -1,6 +1,5 @@
-import { SBtn } from '@/components/common/ui/SBtn';
-import React from 'react';
-import Input from './local/Input';
+'use client'
+import Input from './local/LoInput';
 
 export default function SignIn() {
   return (
