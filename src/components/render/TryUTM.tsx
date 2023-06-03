@@ -1,8 +1,8 @@
 'use client';
-// import { BlueButton } from "@/src/common/button/blue_button/BlueButton"
 import React, { useState } from 'react';
 import styles from './TryUTM.module.css';
 import { utmdata } from './tryUTMData';
+import { BlueButton } from '../common/blue_button/BlueButton';
 export default function TryUtm() {
   const [show, setShow] = useState(false);
   const addUTMHandler = () => {
@@ -41,13 +41,13 @@ export default function TryUtm() {
               d=20230312_UCB
             </div>
 
-            {/* <BlueButton
-              text={"추가하기"}
+            <BlueButton
+              text={'추가하기'}
               clickEvent={addUTMHandler}
-              size={"sm"}
-              color={"full"}
-              types={"button"}
-            /> */}
+              size={'sm'}
+              color={'full'}
+              types={'button'}
+            />
           </div>
         </div>
         <div className={styles.right_section}>

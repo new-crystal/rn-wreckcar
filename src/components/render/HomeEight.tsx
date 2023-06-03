@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Home.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { copyright } from "public/assets/img";
+import copyright from 'public/assets/img/copyright.png';
 
 export default function HomeEight() {
   return (
@@ -49,7 +49,7 @@ export default function HomeEight() {
         </div>
       </article>
       <div className={styles.e_line}>
-        {/* <Image src={copyright} alt="copyright" width={168} height={15} /> */}
+        <Image src={copyright} alt="copyright" width={168} height={15} />
       </div>
     </section>
   );

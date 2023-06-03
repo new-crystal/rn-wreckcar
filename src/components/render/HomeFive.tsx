@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Home.module.css';
 import Image from 'next/image';
-// import { six, create, f_search, out } from "public/assets/gif";
+import { out } from '../../../public/assets/gif/index.js';
 
 export default function HomeFive() {
   return (
@@ -19,7 +19,7 @@ export default function HomeFive() {
             </p>
           </div>
           <div className={styles.five_img}>
-            {/* <Image src={out} alt="Gif" /> */}
+            <Image src={out} alt="Gif" />
           </div>
           <p className={styles.m_five_context}>
             필요한 UTM만 선택하여 내보내기!

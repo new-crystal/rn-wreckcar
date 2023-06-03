@@ -2,8 +2,12 @@ import React from 'react';
 import styles from './Home.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { six } from "public/assets/gif";
-// import { bg_six_one, bg_six_two, bg_six_three } from "public/assets/render/index";
+import { six } from '../../../public/assets/gif';
+import {
+  bg_six_one,
+  bg_six_two,
+  bg_six_three,
+} from '../../../public/assets/render/index';
 
 export default function HomeSix() {
   return (
@@ -12,10 +16,10 @@ export default function HomeSix() {
       <section className={styles.l_section_six}>
         <article>
           <div className={styles.m_mobile_six}>
-            {/* <Image src={six} alt="IMG" /> */}
+            <Image src={six} alt="IMG" />
           </div>
           <div className={styles.six_card_item}>
-            {/* <Image src={bg_six_one} alt="IMG" /> */}
+            <Image src={bg_six_one} alt="IMG" />
             <h2>
               여러개의 UTM을
               <br />한 번에 만들어보세요
@@ -27,7 +31,7 @@ export default function HomeSix() {
             </p>
           </div>
           <div className={styles.six_card_item}>
-            {/* <Image src={bg_six_two} alt="IMG" /> */}
+            <Image src={bg_six_two} alt="IMG" />
             <h2>
               자주 쓰는 파라미터를
               <br />
@@ -39,7 +43,7 @@ export default function HomeSix() {
             </p>
           </div>
           <div className={styles.six_card_item}>
-            {/* <Image src={bg_six_three} alt="IMG" /> */}
+            <Image src={bg_six_three} alt="IMG" />
             <h2>
               Shorten UTM기능으로
               <br />긴 UTM 코드들을 간결하게
