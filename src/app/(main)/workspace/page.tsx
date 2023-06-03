@@ -3,8 +3,8 @@ import React from 'react';
 
 export default function WorkspacePage() {
   return (
-    <>
-      <WorkSpace />
-    </>
+    <p>
+    workspace 생성하기
+    </p>
   );
 }
