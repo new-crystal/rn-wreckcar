@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 
 import styles from './CreateUTM.module.css';
-// import plus from 'public/assets/img/plus.png';
-// import minus from 'public/assets/img/minus.png';
+import plus from '../../../public/assets/img/plus.png';
+import minus from '../../../public/assets/img/minus.png';
 import Image from 'next/image';
-// import { BlueButton } from "@/src/common/button/blue_button/BlueButton";
+import { BlueButton } from '../common/blue_button/BlueButton';
 import { CreateCategory } from './CreateCategory';
-// import Alert from "@/src/common/button/Alert";
+import Alert from '../common/blue_button/Alert';
 // import { getCookie } from "src/util/async/Cookie";
 import { redirect } from 'next/navigation';
 // import { useMutation } from "@tanstack/react-query";
@@ -320,7 +320,7 @@ export const CreateUTM: React.FC<PropsType> = ({ setResUTM }) => {
                             }
                           }}
                         >
-                          {/* <Image
+                          <Image
                             className={styles.minus_img}
                             src={minus}
                             alt="리스트 삭제"
@@ -329,7 +329,7 @@ export const CreateUTM: React.FC<PropsType> = ({ setResUTM }) => {
                                 '리스트 빼기 이미지를 불러올 수 없습니다.'
                               );
                             }}
-                          /> */}
+                          />
                         </button>
                       </div>
                     </div>
@@ -346,32 +346,32 @@ export const CreateUTM: React.FC<PropsType> = ({ setResUTM }) => {
             type="button"
             onClick={addList}
           >
-            {/* <Image
+            <Image
               className={styles.plus_button_img}
               src={plus}
               alt="추가하기"
               onError={() => {
                 console.log('추가버튼 이미지를 불러오지 못했습니다.');
               }}
-            /> */}
+            />
           </button>
           <div className={styles.create_button_box_section}>
-            {/* {alert && (
+            {alert && (
               <Alert
                 title={'성공'}
                 contents={'UTM 생성을 성공하셨습니다!'}
                 onClickEvent={setAlert}
               />
-            )} */}
+            )}
             {/* {isLoading && <Loading isOpen={true} />} */}
 
-            {/* <BlueButton
+            <BlueButton
               size={'sm'}
               color={'full'}
               text={'생성하기'}
               types={'submit'}
-              disabled={isLoading}
-            /> */}
+              // disabled={isLoading}
+            />
           </div>
         </div>
       </form>

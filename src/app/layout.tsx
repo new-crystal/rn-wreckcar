@@ -26,6 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${pretendard.variable}`} lang="ko">
+      <meta property="og:image" content="https://utm.works/api/og1200.png" />
       <body className="flex h-screen w-screen overflow-hidden ">
         <ASide />
         <div className="w-screen">

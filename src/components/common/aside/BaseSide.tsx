@@ -24,7 +24,8 @@ export default function Base({ slimHandle }: SlimProps) {
         (pathName == '/' ||
         pathName == '/signin' ||
         pathName === '/signup' ||
-        pathName === '/webonly'
+        pathName === '/webonly' ||
+        pathName === '/forgetpassword'
           ? ' hidden'
           : '')
       }

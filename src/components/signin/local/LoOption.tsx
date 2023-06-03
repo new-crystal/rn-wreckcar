@@ -3,18 +3,16 @@ import ATag from '@/components/common/link/ATag';
 import React, { useEffect, useState } from 'react';
 
 export default function Option() {
-  const [remember, setRemember] = useState<boolean>();
-  const [isCheck, setCheck] = useState<string>();
+  const [remember, setRemember] = useState<string>();
 
   /**
    * @param event checked boolean
    */
   const checkboxHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = event.target.checked;
-    setRemember(isChecked);
+    setRemember(isChecked.toString());
     localStorage.setItem('uwreckcarLocalIdCheck', JSON.stringify(isChecked));
   };
-
   /**
    * 로컬에서 boolean값 가져오기
    */
@@ -22,7 +20,7 @@ export default function Option() {
     if (typeof window !== 'undefined') {
       const getIsChecked = localStorage.getItem('uwreckcarLocalIdCheck');
       if (getIsChecked) {
-        setCheck(getIsChecked);
+        setRemember(getIsChecked);
       }
     }
   }, []);
@@ -32,13 +30,16 @@ export default function Option() {
       <input
         type="checkbox"
         onChange={checkboxHandle}
-        checked={isCheck === 'true' ? true : false}
+        checked={remember === 'true' ? true : false}
       />
       <div className="flex">
         <ATag href={'/signup'} isBlank={false}>
           <span>회원가입</span>
         </ATag>
-        <span className="mx-2"> | </span> <span> 비밀번호를 잊으셨나요?</span>
+        <span className="mx-2"> | </span>{' '}
+        <ATag href={'/forgetpassword'} isBlank={false}>
+          <span> 비밀번호를 잊으셨나요?</span>
+        </ATag>
       </div>
     </div>
   );
