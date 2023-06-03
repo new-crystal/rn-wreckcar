@@ -1,3 +1,4 @@
+'use client'
 import { SBtn } from "@/components/common/ui/SBtn";
 import React from "react";
 interface PropsType {
