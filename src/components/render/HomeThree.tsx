@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Home.module.css';
 import Image from 'next/image';
-// import { create } from "public/assets/gif";
+import { create } from '../../../public/assets/gif';
 export default function HomeThree() {
   return (
     <section className={styles.section_three}>
@@ -19,7 +19,7 @@ export default function HomeThree() {
           </p>
         </div>
         <div className={styles.three_img}>
-          {/* <Image src={create} alt="Gif" /> */}
+          <Image src={create} alt="Gif" />
         </div>
         <p className={styles.m_content}>
           기존에 가지고 있던 UTM을 입력하면 파라미터 별

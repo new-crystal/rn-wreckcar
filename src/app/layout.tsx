@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${pretendard.variable}`} lang="ko">
-      <body className="flex h-screen w-screen overflow-x-hidden ">
+      <body className="flex h-screen w-screen overflow-hidden ">
         <ASide />
         <div className="w-screen">
           <Header />

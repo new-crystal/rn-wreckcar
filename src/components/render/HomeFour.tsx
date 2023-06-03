@@ -1,19 +1,7 @@
 import React from 'react';
 import styles from './Home.module.css';
 import Image from 'next/image';
-// import { f_search } from "public/assets/gif";
-// import {
-//   sub_img,
-//   seven_img,
-//   bg_six_one,
-//   bg_six_two,
-//   bg_two_left,
-//   bg_two_right,
-//   bg_six_three,
-//   seven_sub_img,
-//   bg_one_illust,
-//   seven_button,
-// } from "public/assets/render/index";
+import { f_search } from '../../../public/assets/gif';
 
 export default function HomeFour() {
   return (
@@ -26,7 +14,7 @@ export default function HomeFour() {
           검색한 UTM 결과를 다양하게 활용해보세요.
         </p>
         <div className={styles.four_img}>
-          {/* <Image src={f_search} alt="Gif" /> */}
+          <Image src={f_search} alt="Gif" />
         </div>
         <div className={styles.text_box}>
           <p className={styles.sub_title}>필요한 UTM만 바로바로 필터링</p>

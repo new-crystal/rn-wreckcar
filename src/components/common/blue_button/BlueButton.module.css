@@ -34,7 +34,7 @@
 }
 
 .full {
-  color: var(--color-white-100);
+  color: #fff;
   background-color: #484bff;
 }
 .full:hover {

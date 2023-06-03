@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Home.module.css';
 import Image from 'next/image';
 
-// import { bg_two_left, bg_two_right } from "public/assets/render/index";
+import { bg_two_left, bg_two_right } from '../../../public/assets/render/index';
 
 export default function HomeTwo() {
   return (
@@ -25,10 +25,10 @@ export default function HomeTwo() {
         </article>
         <article>
           <div className={styles.section_two_img}>
-            {/* <Image src={bg_two_left} alt="Left_img" /> */}
+            <Image src={bg_two_left} alt="Left_img" />
           </div>
           <div className={styles.section_two_img}>
-            {/* <Image src={bg_two_right} alt="Right_img" /> */}
+            <Image src={bg_two_right} alt="Right_img" />
           </div>
         </article>
       </section>
