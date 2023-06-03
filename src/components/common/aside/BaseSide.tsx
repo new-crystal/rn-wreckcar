@@ -20,14 +20,18 @@ export default function Base({ slimHandle }: SlimProps) {
   return (
     <aside
       className={
-        'w-[270px] min-w-[270px] text-white h-screen' +
+        'h-screen w-[270px] min-w-[270px] text-white' +
         (pathName == '/' || pathName == '/signin' || pathName === '/signup'
           ? ' hidden'
           : '')
       }
     >
-      <div className="bg-blue w-[270px] min-w-[270px] fixed pt-3 pb-5 ">
-        <div className="logo_slide flex justify-between px-3 mt-1">
+      <div
+        className="
+      bg-blue fixed w-[270px] min-w-[270px] 
+      pb-5 pt-3 "
+      >
+        <div className="logo_slide mt-1 flex justify-between px-3">
           <ATag href={'/'} isBlank={false}>
             <div className="logo ml-3 h-[70px]">
               <ILogo />
@@ -38,15 +42,26 @@ export default function Base({ slimHandle }: SlimProps) {
           </div>
         </div>
 
-        <div className="w_nav h-screen flex flex-col justify-between px-3 pb-4">
-          <ul className="top_nav flex-col flex mt-10 gap-2 ">
-            <p className="mb-4 ml-3 font-bold text-xl">내 UTM</p>
+        <div
+          className="
+        w_nav flex h-screen flex-col justify-between px-3 pb-4"
+        >
+          <ul
+            className="
+          top_nav mt-10 flex flex-col gap-2 "
+          >
+            <p
+              className="
+            mb-4 ml-3 text-xl font-bold"
+            >
+              내 UTM
+            </p>
             <ATag href={'/management'} isBlank={false}>
               <li
                 className={
-                  'flex flex-row gap-2  p-2 hover:bg-hblue rounded-[4px]' +
+                  'hover:bg-hblue flex flex-row  gap-2 rounded-[4px] p-2' +
                   (pathName == '/management'
-                    ? 'bg-orange p-2 rounded-[4px]'
+                    ? 'bg-orange rounded-[4px] p-2'
                     : '')
                 }
               >
@@ -57,8 +72,8 @@ export default function Base({ slimHandle }: SlimProps) {
             <ATag href={'/creating'} isBlank={false}>
               <li
                 className={
-                  'flex flex-row gap-2 p-2 hover:bg-hblue ' +
-                  (pathName == '/creating' ? 'bg-hblue p-2 rounded-[4px]' : '')
+                  'hover:bg-hblue flex flex-row gap-2 p-2 ' +
+                  (pathName == '/creating' ? 'bg-hblue rounded-[4px] p-2' : '')
                 }
               >
                 <ICreate fillColor={'white'} />새 UTM 생성하기
@@ -66,43 +81,44 @@ export default function Base({ slimHandle }: SlimProps) {
             </ATag>
 
             <ATag href={'https://naver.com'} isBlank={false}>
-              <li className="flex flex-row gap-2 p-2 rounded-[4px] hover:bg-hblue ">
+              <li className="hover:bg-hblue flex flex-row gap-2 rounded-[4px] p-2 ">
                 <IAdd fillColor={'white'} />
                 기존 UTM 추가하기
               </li>
             </ATag>
-            <p className='mb-4 ml-3 font-bold text-xl mt-10'> 워크 스페이스</p>
+            <p className="mb-4 ml-3 mt-10 text-xl font-bold"> 워크 스페이스</p>
             <ATag href={'/workspace/main'} isBlank={false}>
-             
-              <li className="flex flex-row gap-2 p-2 rounded-[4px] hover:bg-hblue ">
-                <IMenu fillColor={'white' } />
+              <li
+                className="
+              hover:bg-hblue flex flex-row gap-2 rounded-[4px] p-2 "
+              >
+                <IMenu fillColor={'white'} />
                 워크 스페이스 관리하기
-                </li>
-            </ATag>
-            
-            <li className="flex flex-row gap-2 p-2 rounded-[4px] hover:bg-hblue ">
-              <ICreate fillColor={'white'} />
-              새 워크 스페이스 생성하기 
               </li>
+            </ATag>
+
+            <li className="hover:bg-hblue flex flex-row gap-2 rounded-[4px] p-2 ">
+              <ICreate fillColor={'white'} />새 워크 스페이스 생성하기
+            </li>
           </ul>
-          <ul className="flex flex-col gap-3 mb-20 pb-12  ">
-            <p className=" font-extrabold text-xl ml-3">유렉카</p>
+          <ul className="mb-20 flex flex-col gap-3 pb-12  ">
+            <p className=" ml-3 text-xl font-extrabold">유렉카</p>
             <ATag href={'https://utm.works'} isBlank={true}>
-              <li className="flex flex-row gap-2  rounded-[4px] hover:bg-hblue p-2">
+              <li className="hover:bg-hblue flex flex-row  gap-2 rounded-[4px] p-2">
                 <INoti bnw={'w'} w={24} h={24} />
                 공지사항
               </li>
             </ATag>
 
             <ATag href={'https://naver.com'} isBlank={true}>
-              <li className="flex flex-row gap-2 rounded-[4px] hover:bg-hblue p-2">
+              <li className="hover:bg-hblue flex flex-row gap-2 rounded-[4px] p-2">
                 <IGuide fillColor={'white'} />
                 가이드
               </li>
             </ATag>
 
             <ATag href={'https://naver.com'} isBlank={true}>
-              <li className="flex flex-row gap-2  rounded-[4px] hover:bg-hblue p-2">
+              <li className="hover:bg-hblue flex flex-row  gap-2 rounded-[4px] p-2">
                 <IMore fillColor={'white'} />
                 문의하기
               </li>

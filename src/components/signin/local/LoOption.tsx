@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function Option() {
   const [remember, setRemember] = useState<boolean>();
-  const [isCheck, setCheck] = useState<string>(); 
+  const [isCheck, setCheck] = useState<string>();
 
   /**
    * @param event checked boolean
@@ -22,11 +22,10 @@ export default function Option() {
     if (typeof window !== 'undefined') {
       const getIsChecked = localStorage.getItem('uwreckcarLocalIdCheck');
       if (getIsChecked) {
-        setCheck(getIsChecked)
+        setCheck(getIsChecked);
       }
     }
   }, []);
-
 
   return (
     <div className="flex justify-between">
