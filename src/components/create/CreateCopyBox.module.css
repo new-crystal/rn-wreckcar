@@ -132,7 +132,7 @@
   width: 20px;
   height: 20px;
 }
-@media screen and (max-width: 1910px) {
+@media screen and (max-width: 1610px) {
   .container_copy_box {
     flex-direction: column;
     width: 100%;

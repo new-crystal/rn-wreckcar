@@ -22,6 +22,10 @@ module.exports = {
       deepBlue: '#0A0D54',
       white: '#fff',
     },
+    textColor: {
+      lRed: '#FF0000',
+      white: '#fff',
+    },
   },
 
   plugins: [],

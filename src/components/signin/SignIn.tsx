@@ -1,5 +1,5 @@
-"use client";
-import Input from "./local/LoInput";
+'use client';
+import Input from './local/LoInput';
 
 export default function SignIn() {
   return (

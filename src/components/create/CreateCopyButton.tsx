@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-// import b_close from "public/assets/img/b_close.png";
-// import check from 'public/assets/img/icons.png';
+import b_close from '../../../public/assets/img/b_close.png';
+import check from '../../../public/assets/img/icons.png';
 import styles from './createCopyButton.module.css';
 type PropsType = {
   text: string;
@@ -31,19 +31,19 @@ export const CreateCopyButton: React.FC<PropsType> = ({ text }) => {
           }}
         >
           <div className={styles.alert_left}>
-            {/* <Image
+            <Image
               className={styles.alert_icon}
               src={check}
               width={25}
               height={25}
               alt="check"
-            /> */}
+            />
             <div className={styles.alert_text}>
               <h5>성공</h5> <p>UTM이 복사되었습니다!</p>
             </div>
           </div>
           <button>
-            {/* <Image src={b_close} alt="X" width={20} height={20} /> */}
+            <Image src={b_close} alt="X" width={20} height={20} />
           </button>
         </div>
       )}

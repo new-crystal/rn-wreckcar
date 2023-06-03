@@ -1,17 +1,36 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Option from './LoOption';
-import Button from './LoButton';
+import { SBtn } from '@/components/common/ui/SBtn';
 
 export default function Input() {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isPWVaild, setPWVaild] = useState(true);
+  const [isEmailValid, setEmailVaild] = useState(true);
   const [check, setCheck] = useState<string>();
-  const emailHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const emailValue = e.target.value;
-    setEmail(emailValue);
-  };
-  const isEmailValid = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
 
+  const vaildEmail = (email: string): boolean => {
+    const pattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return pattern.test(email);
+  };
+
+  const vaildPassword = (passwordValue: string): boolean => {
+    const pattern =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    return pattern.test(passwordValue);
+  };
+
+  const emailHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inEmail = e.target.value;
+    setEmailVaild(vaildEmail(inEmail));
+    setEmail(inEmail);
+  };
+  const passwordHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inPassword = e.target.value;
+    setPassword(inPassword);
+    setPWVaild(vaildPassword(inPassword));
+  };
   /**
    * Login Button
    */
@@ -31,7 +50,7 @@ export default function Input() {
         setCheck(getIsChecked);
       }
     }
-  }, [email, check]);
+  }, []);
 
   return (
     <div className="flex flex-col gap-2">
@@ -52,12 +71,26 @@ export default function Input() {
         rounded-[4px] border-[1px] border-solid border-[#e1e1e1]
         px-2 "
         placeholder="비밀번호를 입력해주세요"
+        onChange={passwordHandle}
       />
       <div className="h-[16px]">
-        {isEmailValid ? null : <div>유효한 이메일을 입력하세요</div>}
+        {isEmailValid ? (
+          ''
+        ) : (
+          <div className="text-lRed pl-0.5 text-sm">
+            유효한 이메일을 입력하세요
+          </div>
+        )}
+        {!isPWVaild && (
+          <div className="text-lRed pl-0.5 text-sm">
+            비밀번호 형식이 맞지 않습니다.
+          </div>
+        )}
       </div>
       <Option />
-      <Button onClick={loginHandle} />
+      <SBtn size={'lg'} color={'blue'} onClick={loginHandle}>
+        로그인
+      </SBtn>
     </div>
   );
 }
