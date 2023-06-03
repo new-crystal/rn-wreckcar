@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { useEffect, useState } from 'react';
 import Option from './LoOption';
 import Button from './LoButton';
@@ -16,37 +16,41 @@ export default function Input() {
    * Login Button
    */
   const loginHandle = () => {
-
-    localStorage.setItem('uwreckcarLocalEmail', (email))
-
+    localStorage.setItem('uwreckcarLocalEmail', email);
   };
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const getIsChecked = localStorage.getItem('uwreckcarLocalIdCheck') || ""
-      const getEmail = localStorage.getItem('uwreckcarLocalEmail') || ""
+      const getIsChecked = localStorage.getItem('uwreckcarLocalIdCheck') || '';
+      const getEmail = localStorage.getItem('uwreckcarLocalEmail') || '';
 
       if (getEmail && getIsChecked) {
         setEmail(getEmail);
       }
       if (getIsChecked) {
-        setCheck(getIsChecked)
+        setCheck(getIsChecked);
       }
     }
   }, [email, check]);
 
   return (
-    <div className="flex-col flex gap-2">
+    <div className="flex flex-col gap-2">
       <input
         type="email"
-        className="w-[500px] h-[40px] px-2 border-solid border-[1px] border-[#e1e1e1] rounded-[4px]"
+        className="
+        h-[40px] w-[500px] 
+        rounded-[4px] border-[1px] border-solid border-[#e1e1e1] 
+        px-2"
         defaultValue={check === 'true' ? `${email}` : undefined}
         placeholder="이메일을 입력해주세요"
-    onChange={emailHandle}
+        onChange={emailHandle}
       />
       <input
         type="password"
-        className="px-2 h-[40px] border-solid border-[1px] border-[#e1e1e1] rounded-[4px] "
+        className="
+        h-[40px] 
+        rounded-[4px] border-[1px] border-solid border-[#e1e1e1]
+        px-2 "
         placeholder="비밀번호를 입력해주세요"
       />
       <div className="h-[16px]">
