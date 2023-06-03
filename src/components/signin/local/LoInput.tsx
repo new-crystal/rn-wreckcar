@@ -16,8 +16,8 @@ export default function Input() {
    * Login Button
    */
   const loginHandle = () => {
-    
-localStorage.setItem('uwreckcarLocalEmail', (email))
+
+    localStorage.setItem('uwreckcarLocalEmail', (email))
 
   };
 
@@ -30,7 +30,7 @@ localStorage.setItem('uwreckcarLocalEmail', (email))
         setEmail(getEmail);
       }
       if (getIsChecked) {
-                setCheck(getIsChecked)
+        setCheck(getIsChecked)
       }
     }
   }, [email, check]);
@@ -38,11 +38,11 @@ localStorage.setItem('uwreckcarLocalEmail', (email))
   return (
     <div className="flex-col flex gap-2">
       <input
-    type="email"
+        type="email"
         className="w-[500px] h-[40px] px-2 border-solid border-[1px] border-[#e1e1e1] rounded-[4px]"
         defaultValue={check === 'true' ? `${email}` : undefined}
         placeholder="이메일을 입력해주세요"
-        onChange={emailHandle}
+    onChange={emailHandle}
       />
       <input
         type="password"
