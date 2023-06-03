@@ -12,13 +12,17 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        pretendard: ['--font-pretendard'],
+      },
     },
     backgroundColor: {
       blue: '#484BFF',
       hblue: '#382ADE',
       deepBlue: '#0A0D54',
       white: '#fff',
-    },  },
+    },
+  },
 
   plugins: [],
 };
