@@ -15,7 +15,7 @@ export default function Slim({ slimHandle }: SlimProps) {
   return (
     <aside
       className={
-        'w-[80px] min-w-[60px] text-white h-screen ' +
+        'w-[60px] min-w-[60px] text-white h-screen ' +
         (pathName == '/' || pathName == '/signin' || pathName === '/signup'
           ? 'hidden'
           : '')

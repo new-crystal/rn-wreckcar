@@ -11,35 +11,76 @@ import {
 
 const data = [
   {
-    name: "naver",
+    name: "naver1",
     uv: 1,
     cv: 5,
     amt: 5,
   
   },
   {
-    name: "유튜브",
+    name: "유튜브2",
     uv: 5,
     cv: 5,
     amt: 10,
  
   },
   {
-    name: "daum",
+    name: "daum3",
     uv: 30,
     cv: 10,
     amt: 10,
    
   },
   {
-    name: "디스콰이엇",
+    name: "daum4",
+    uv: 30,
+    cv: 10,
+    amt: 10,
+   
+  },
+  {
+    name: "daum5",
+    uv: 30,
+    cv: 10,
+    amt: 10,
+   
+  },
+  {
+    name: "디스콰이엇6",
       uv: 30,
     cv: 10,
     amt: 10,
    
   },
   {
-    name: "구글",
+    name: "구글7",
+    
+      uv: 20,
+    cv: 16,
+    amt: 5,
+
+   
+  },
+  {
+    name: "구글8",
+    
+      uv: 20,
+    cv: 16,
+    amt: 5,
+
+   
+  },
+  {
+    name: "구글9",
+    
+      uv: 20,
+    cv: 16,
+    amt: 5,
+
+   
+  },
+  {
+    name: "구글10",
     
       uv: 20,
     cv: 16,
@@ -55,7 +96,7 @@ export default function WChart() {
         <>
             
     <AreaChart
-      width={500}
+      width={1200}
       height={400}
       data={data}
       margin={{

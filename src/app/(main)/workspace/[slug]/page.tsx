@@ -10,7 +10,7 @@ export default function WorkSpaceMain({ params }: { params: { slug: string } }) 
     console.log(pathname)
     console.log()
     return (
-        <div>
+        <div className=''>
             <WSearch />
             <WChart />
         </div>
