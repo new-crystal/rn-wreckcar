@@ -1,6 +1,6 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import { INoti, IProfile } from '../icon/Icon';
-
 export default function BaseHead() {
   return (
     <div

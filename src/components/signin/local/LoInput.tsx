@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Option from './LoOption';
 import { SBtn } from '@/components/common/ui/SBtn';
+import { SIGN_IN } from '@/services/async/user';
 
 export default function Input() {
   const [email, setEmail] = useState('');
@@ -9,6 +10,13 @@ export default function Input() {
   const [isPWVaild, setPWVaild] = useState(true);
   const [isEmailValid, setEmailVaild] = useState(true);
   const [check, setCheck] = useState<string>();
+
+  const loginHandle = async () => {
+    const loginData = { data: { email, password } };
+    // 전역으로 관리를 해서 재사용할지 아니면 다른 api로 요청할지 고민중
+    // const res = await SIGN_IN(loginData);
+    localStorage.setItem('uwreckcarLocalEmail', email);
+  };
 
   const vaildEmail = (email: string): boolean => {
     const pattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -34,9 +42,6 @@ export default function Input() {
   /**
    * Login Button
    */
-  const loginHandle = () => {
-    localStorage.setItem('uwreckcarLocalEmail', email);
-  };
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

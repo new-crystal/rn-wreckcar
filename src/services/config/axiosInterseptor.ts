@@ -1,3 +1,4 @@
+'use client';
 import axios, {
   AxiosInstance,
   AxiosRequestConfig,
@@ -5,37 +6,44 @@ import axios, {
   AxiosResponse,
   AxiosError,
 } from 'axios';
+import { Cookies } from 'react-cookie';
+
+const cookies = new Cookies();
 
 interface AdaptAxiosRequestConfig extends AxiosRequestConfig {
   headers: AxiosRequestHeaders;
 }
-// Axios 인스턴스 생성
+
 const instance: AxiosInstance = axios.create({
-  baseURL: process.env.BACK_API,
+  baseURL: process.env.NEXT_PUBLIC_BACK_API,
   timeout: 5000,
 });
 
-// 요청 인터셉터 설정
 instance.interceptors.request.use(
   (config: AdaptAxiosRequestConfig) => {
-    //헤더 설정, 토큰 추가
+    const refresh_token = cookies.get('refresh_token');
+    if (refresh_token) {
+      config.headers['X-Refresh-Token'] = `Bearer ${refresh_token}`;
+    }
     return config;
   },
   (error: AxiosError) => {
-    // 요청 에러 처리
     return Promise.reject(error);
   }
 );
-
-// 응답 인터셉터 설정
+interface ErrorResponse {
+  // 에러 응답 데이터의 타입을 정의합니다
+  error: string;
+}
 instance.interceptors.response.use(
-  (response: AxiosResponse) => {
-    // 응답 데이터 가공
+  (response) => {
     return response;
   },
   (error: AxiosError) => {
-    // 응답 에러 처리
-    return Promise.reject(error);
+    const handleErrorResponse = (error: AxiosError<ErrorResponse, any>) => {
+      console.error(error);
+      return Promise.reject(error);
+    };
   }
 );
 

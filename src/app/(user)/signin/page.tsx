@@ -1,4 +1,3 @@
-'use client';
 import SignIn from '@/components/signin/SignIn';
 
 export default function SignInPage() {

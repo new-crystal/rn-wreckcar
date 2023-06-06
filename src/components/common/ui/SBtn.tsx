@@ -5,7 +5,7 @@ type SizeType = 'sm' | 'md' | 'lg';
 type ColorType = 'white' | 'blue';
 
 interface BtnPropsType {
-  onClick: () => void;
+  onClick?: any;
   size: SizeType;
   color: ColorType;
   children: string;
