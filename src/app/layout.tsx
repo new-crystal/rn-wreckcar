@@ -1,7 +1,7 @@
 import './globals.css';
 import localFont from 'next/font/local';
 import { Inter } from 'next/font/google';
-import ASide from '@/components/common/aside/ASide';
+import ASide from '../components/common/aside/Aside'
 import Header from '@/components/common/header/Header';
 import { Metadata } from 'next';
 
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html className={`${pretendard.variable}`} lang="ko">
       <meta property="og:image" content="https://utm.works/api/og1200.png" />
-      <body className="flex h-screen w-screen overflow-hidden ">
+      <body id="__next" className="flex h-screen w-screen overflow-hidden ">
         <ASide />
         <div className="w-screen">
           <Header />

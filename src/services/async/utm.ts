@@ -11,8 +11,6 @@ export const getUTMs = async () => {
   };
   
 
-
-
 type DataType = { data: string[] };
 
 export const getUTMExcell = async (data: DataType) => {
@@ -53,8 +51,8 @@ export const deleteUTM = async (data: any) => {
   /** PATCH */
 
 type EditMemoType = {
-    utm_id: number | undefined;
-    utm_memo?: string;
+    _id: number | undefined;
+    memo?: string;
   };
   
   export const patchUTM = async (data: EditMemoType) => {
